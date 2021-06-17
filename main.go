@@ -16,14 +16,13 @@ func input(r io.Reader) <-chan string {
 		}
 		close(ch)
 	}()
-
 	return ch
 }
 
 func main() {
 	ch := input(os.Stdin)
 	for {
-		fmt.Print("> ")
+		fmt.Print(">")
 		fmt.Println(<-ch)
 	}
 }
